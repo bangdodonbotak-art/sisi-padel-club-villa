@@ -125,25 +125,6 @@
       will-change: transform;
     }
 
-    /* Foto Menyusul Architectural Placeholder Pattern */
-    .placeholder-pattern {
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(243, 239, 230, 0.05) 0px,
-        rgba(243, 239, 230, 0.05) 12px,
-        transparent 12px,
-        transparent 24px
-      );
-    }
-    .placeholder-pattern-dark {
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(14, 31, 26, 0.05) 0px,
-        rgba(14, 31, 26, 0.05) 12px,
-        transparent 12px,
-        transparent 24px
-      );
-    }
 
     /* Hide scrollbar for Vibe swipe track */
     .no-scrollbar::-webkit-scrollbar {
@@ -254,6 +235,7 @@
         <a href="#manifesto" class="hover:text-lime transition-colors">Manifesto</a>
         <a href="#courts" class="hover:text-lime transition-colors">Courts</a>
         <a href="#vibe" class="hover:text-lime transition-colors">Vibe</a>
+        <a href="#stay" class="hover:text-lime transition-colors">Stay</a>
         <a href="#plans" class="hover:text-lime transition-colors">Sessions</a>
         <a href="#faq" class="hover:text-lime transition-colors">FAQ</a>
         <a href="#visit" class="hover:text-lime transition-colors">Visit</a>
@@ -397,11 +379,7 @@
               </div>
 
               <!-- Typographic / Color-block Placeholder labeled 'foto menyusul' -->
-              <div class="relative aspect-[16/10] w-full rounded-2xl bg-court-red-dark border border-sand/25 placeholder-pattern flex flex-col items-center justify-center p-6 text-center overflow-hidden mb-6">
-                <div class="absolute inset-3 border border-sand/15 rounded-xl pointer-events-none"></div>
-                <span class="font-display-condensed text-3xl sm:text-4xl font-bold tracking-wide text-sand">FOTO MENYUSUL</span>
-                <span class="mt-1 text-[11px] uppercase tracking-[0.22em] text-sand/70">Upper Court · Red Turf · Glass Walls</span>
-              </div>
+              <img src="assets/photos/padel-A4.jpg" alt="Upper Court — pemain padel di lapangan merah Sisi" class="relative aspect-[16/10] w-full rounded-2xl object-cover object-[center_30%] mb-6" loading="lazy" />
 
               <h3 class="font-display-condensed text-4xl sm:text-5xl font-bold text-sand">UPPER COURT</h3>
               <p class="mt-2 text-sm text-sand/80">
@@ -431,11 +409,7 @@
               </div>
 
               <!-- Typographic / Color-block Placeholder labeled 'foto menyusul' -->
-              <div class="relative aspect-[16/10] w-full rounded-2xl bg-jungle border border-sand/25 placeholder-pattern flex flex-col items-center justify-center p-6 text-center overflow-hidden mb-6">
-                <div class="absolute inset-3 border border-sand/15 rounded-xl pointer-events-none"></div>
-                <span class="font-display-condensed text-3xl sm:text-4xl font-bold tracking-wide text-sand">FOTO MENYUSUL</span>
-                <span class="mt-1 text-[11px] uppercase tracking-[0.22em] text-lime/80">Main Court · Red Turf · Glass Walls</span>
-              </div>
+              <img src="assets/photos/padel-A7.jpg" alt="Main Court — servis di lapangan merah Sisi" class="relative aspect-[16/10] w-full rounded-2xl object-cover object-[center_30%] mb-6" loading="lazy" />
 
               <h3 class="font-display-condensed text-4xl sm:text-5xl font-bold text-sand">MAIN COURT</h3>
               <p class="mt-2 text-sm text-sand/80">
@@ -541,64 +515,94 @@
         class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory px-6 sm:px-10 pb-6"
       >
         <!-- Slide 1 -->
-        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl bg-court-red border border-sand/20 placeholder-pattern p-7 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.18em]">
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/padel-hero-A1.jpg" alt="Upper Court — forehand di depan net post Sisi Padel" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
             <span>01 / Upper Court</span>
-            <span class="px-2.5 py-1 rounded-full bg-jungle/50 text-lime">Foto Menyusul</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
           </div>
-          <div class="my-auto text-center">
-            <p class="font-display-condensed text-5xl font-bold">FOTO MENYUSUL</p>
-            <p class="text-xs uppercase tracking-[0.2em] text-sand/80 mt-2">Roofed Outdoor Panoramic · Red Turf</p>
-          </div>
-          <div class="text-xs text-sand/75 border-t border-sand/20 pt-4">
-            Sisi Padel Club &amp; Villa Bali — Upper Court
-          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Sisi Padel Club &amp; Villa Bali — Upper Court</div>
         </div>
 
         <!-- Slide 2 -->
-        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl bg-jungle-light border border-sand/20 placeholder-pattern p-7 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.18em]">
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/padel-A5.jpg" alt="Main Court — forehand di depan dinding bambu" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
             <span>02 / Main Court</span>
-            <span class="px-2.5 py-1 rounded-full bg-court-red text-sand">Foto Menyusul</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
           </div>
-          <div class="my-auto text-center">
-            <p class="font-display-condensed text-5xl font-bold text-lime">FOTO MENYUSUL</p>
-            <p class="text-xs uppercase tracking-[0.2em] text-sand/80 mt-2">Panoramic Glass Walls · Red Turf</p>
-          </div>
-          <div class="text-xs text-sand/75 border-t border-sand/20 pt-4">
-            Sisi Padel Club &amp; Villa Bali — Main Court
-          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Sisi Padel Club &amp; Villa Bali — Main Court</div>
         </div>
 
         <!-- Slide 3 -->
-        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl bg-sand text-jungle border border-jungle/15 placeholder-pattern-dark p-7 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.18em]">
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/sisi-villa-portrait.jpg" alt="Villa Sisi — kolam dan gazebo" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
             <span>03 / Villa On Site</span>
-            <span class="px-2.5 py-1 rounded-full bg-jungle text-lime">Foto Menyusul</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
           </div>
-          <div class="my-auto text-center">
-            <p class="font-display-condensed text-5xl font-bold text-court-red">FOTO MENYUSUL</p>
-            <p class="text-xs uppercase tracking-[0.2em] text-jungle/75 mt-2">Stay. Play. Breathe. · Tampaksiring</p>
-          </div>
-          <div class="text-xs text-jungle/75 border-t border-jungle/15 pt-4">
-            Villa di lokasi Sisi Padel Club &amp; Villa Bali
-          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Villa di lokasi Sisi Padel Club &amp; Villa Bali</div>
         </div>
 
         <!-- Slide 4 -->
-        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl bg-court-red-dark border border-sand/20 placeholder-pattern p-7 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.18em]">
-            <span>04 / Club Lounge &amp; Store</span>
-            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Foto Menyusul</span>
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/padel-C1-grup.jpg" alt="Komunitas padel Sisi berfoto bersama" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
+            <span>04 / Club Community</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
           </div>
-          <div class="my-auto text-center">
-            <p class="font-display-condensed text-5xl font-bold">FOTO MENYUSUL</p>
-            <p class="text-xs uppercase tracking-[0.2em] text-sand/80 mt-2">Store · Snack Bar · Changing Room</p>
-          </div>
-          <div class="text-xs text-sand/75 border-t border-sand/20 pt-4">
-            Pejeng Kelod, Tampaksiring, Gianyar Regency
-          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Komunitas padel di Sisi — Pejeng Kelod, Tampaksiring</div>
         </div>
+
+        
+        <!-- Slide 5 -->
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/padel-B1.jpg" alt="Pemain wanita siap main di net Sisi Padel" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
+            <span>05 / Ready to Play</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
+          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Siap main — Sisi Padel Club</div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/padel-C2-netpost.jpg" alt="Dua pemain di net Main Court" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
+            <span>06 / Doubles</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
+          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Main berpasangan di Main Court</div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <img src="assets/photos/entrance.jpg" alt="Pintu masuk Sisi Padel Club dan Villa" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
+            <span>07 / Welcome</span>
+            <span class="px-2.5 py-1 rounded-full bg-jungle/60 text-lime">Sisi Padel Club</span>
+          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Pintu masuk Sisi Padel Club &amp; Villa</div>
+        </div>
+
+        <!-- Slide 8 (video) -->
+        <div class="snap-start shrink-0 w-[82vw] sm:w-[420px] aspect-[4/5] rounded-3xl overflow-hidden relative border border-sand/20">
+          <video src="assets/videos/padel-21s.mp4" autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover" aria-label="Aksi padel 21 detik di Sisi Padel Club"></video>
+          <div class="absolute inset-0 bg-gradient-to-t from-jungle/80 via-transparent to-jungle/30 pointer-events-none"></div>
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between text-xs uppercase tracking-[0.18em] p-5">
+            <span>08 / In Action</span>
+            <span class="px-2.5 py-1 rounded-full bg-court-red text-sand">Video · 21 detik</span>
+          </div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-xs text-sand/85 border-t border-sand/20">Aksi padel di Sisi Padel Club</div>
+        </div>
+
       </div>
 
       <!-- Kinetic Marquee Strip -->
@@ -634,13 +638,56 @@
     </section>
 
     <!-- ===================================================================
+         STAY SECTION (Sand #F3EFE6 Ground — Villa film + photos, 1 chapter only)
+         =================================================================== -->
+    <section id="stay" class="relative bg-sand text-jungle py-24 sm:py-32 px-6 sm:px-10 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-jungle/15">
+          <div>
+            <span class="text-xs uppercase tracking-[0.2em] text-court-red font-semibold block mb-3">04 / Stay On Site</span>
+            <h2 class="font-display-condensed text-6xl sm:text-7xl md:text-8xl font-bold">STAY AT SISI</h2>
+          </div>
+          <p class="max-w-md text-sm sm:text-base text-jungle/80">Main dulu, nginep di lokasi. Villa Sisi ada di dalam area klub — kolam privat, dapur, dan taman di sekelilingnya.</p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <!-- Villa film (Dony's pick: reel DLpdFaCJz3HW) -->
+          <div class="lg:col-span-2">
+            <video src="assets/videos/villa-reel-DLpdFaCJz3HW-13s.mp4" autoplay muted loop playsinline preload="metadata" class="w-full aspect-[9/16] max-h-[640px] object-cover rounded-3xl border border-jungle/15" aria-label="Video villa Sisi Ubud"></video>
+            <p class="mt-3 text-xs uppercase tracking-[0.18em] text-jungle/60">Villa Sisi Ubud — video dari @sisipadelclub</p>
+          </div>
+
+          <!-- 3 villa photos + facts (Airbnb vs Tiket kept separate, no price) -->
+          <div class="lg:col-span-3 flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-4">
+              <img src="assets/photos/sisi-hero.jpg" alt="Kolam villa Sisi dengan gazebo dan sawah" class="w-full aspect-[4/3] object-cover rounded-2xl border border-jungle/15" loading="lazy" />
+              <img src="assets/photos/sisi-airbnb-pool-facade.jpg" alt="Fasad villa dengan kolam" class="w-full aspect-[4/3] object-cover rounded-2xl border border-jungle/15" loading="lazy" />
+              <img src="assets/photos/sisi-airbnb-pool-garden.jpg" alt="Taman dan kolam villa Sisi" class="w-full aspect-[4/3] object-cover rounded-2xl border border-jungle/15 col-span-2" loading="lazy" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4 text-sm">
+              <div class="bg-cream border border-jungle/15 rounded-2xl p-5">
+                <p class="text-[11px] uppercase tracking-[0.18em] text-jungle/60 mb-1">Airbnb — Sisi's Ubud Villa</p>
+                <p>2 bedrooms · private pool · kitchen · parking · AC · WiFi. Host: RM Arvino.</p>
+              </div>
+              <div class="bg-cream border border-jungle/15 rounded-2xl p-5">
+                <p class="text-[11px] uppercase tracking-[0.18em] text-jungle/60 mb-1">Tiket.com — 1 Bedroom Villa with Pool View</p>
+                <p>70 m² · check-in 14:00 · check-out 12:00 · no breakfast.</p>
+              </div>
+            </div>
+            <a href="https://wa.me/628111592462?text=Halo%20Sisi%20Padel%20Club%2C%20saya%20mau%20tanya%20ketersediaan%20villa." target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center gap-2 bg-jungle text-sand font-semibold text-xs uppercase tracking-[0.14em] px-6 py-3.5 rounded-full hover:opacity-90 transition-opacity">Tanya ketersediaan villa di WhatsApp &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
          PLANS / SESSIONS SECTION (Sand #F3EFE6 Ground — 120-Minute Sessions, NO Prices)
          =================================================================== -->
     <section id="plans" class="relative bg-sand text-jungle py-24 sm:py-32 px-6 sm:px-10">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-jungle/15">
           <div>
-            <span class="text-xs uppercase tracking-[0.2em] text-court-red font-semibold block mb-3">04 / Court Sessions &amp; Villa</span>
+            <span class="text-xs uppercase tracking-[0.2em] text-court-red font-semibold block mb-3">05 / Court Sessions</span>
             <h2 class="font-display-condensed text-6xl sm:text-7xl md:text-8xl font-bold">
               120-MINUTE SESSIONS
             </h2>
@@ -758,7 +805,7 @@
       <div class="max-w-5xl mx-auto pt-12 border-t border-jungle/15">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
-            <span class="text-xs uppercase tracking-[0.2em] text-court-red font-semibold block mb-3">05 / Informasi Terverifikasi</span>
+            <span class="text-xs uppercase tracking-[0.2em] text-court-red font-semibold block mb-3">06 / Informasi Terverifikasi</span>
             <h2 class="font-display-condensed text-5xl sm:text-7xl font-bold">FREQUENTLY ASKED QUESTIONS</h2>
           </div>
         </div>
@@ -869,7 +916,7 @@
           
           <!-- Left Column: Direct Playtomic Deep-link & Club Hours -->
           <div class="lg:col-span-5 space-y-6">
-            <span class="text-xs uppercase tracking-[0.2em] text-lime font-semibold block">06 / Reserve Your Court</span>
+            <span class="text-xs uppercase tracking-[0.2em] text-lime font-semibold block">07 / Reserve Your Court</span>
             <h2 class="font-display-condensed text-6xl sm:text-7xl font-bold leading-none">
               BOOK YOUR SESSION
             </h2>
@@ -976,7 +1023,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-sand/15">
           <div>
-            <span class="text-xs uppercase tracking-[0.2em] text-lime font-semibold block mb-3">07 / Location &amp; Verified Contacts</span>
+            <span class="text-xs uppercase tracking-[0.2em] text-lime font-semibold block mb-3">08 / Location &amp; Verified Contacts</span>
             <h2 class="font-display-condensed text-6xl sm:text-7xl md:text-8xl font-bold">
               VISIT SISI PADEL BALI
             </h2>
