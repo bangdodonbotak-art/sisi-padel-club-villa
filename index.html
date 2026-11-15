@@ -276,10 +276,12 @@
     <!-- ===================================================================
          HERO SECTION (Full-bleed Court-Red #C1272D Ground)
          =================================================================== -->
-    <section id="hero" class="relative min-h-[105svh] w-full bg-court-red text-sand court-grid-lines overflow-hidden flex flex-col justify-between pt-24 pb-8 md:pb-12">
-      <!-- Subtle panoramic court frame lines -->
-      <div class="pointer-events-none absolute inset-x-4 sm:inset-x-8 top-20 bottom-6 border border-sand/15 rounded-3xl"></div>
-      <div class="pointer-events-none absolute left-1/2 top-20 bottom-6 w-px bg-sand/10 -translate-x-1/2"></div>
+    <section id="hero" class="relative min-h-[105svh] w-full bg-jungle text-sand overflow-hidden flex flex-col justify-between pt-24 pb-8 md:pb-12">
+      <!-- Frame 1: real <img> for instant LCP; the canvas draws the sequence on top -->
+      <img id="hero-first-frame" src="hero/desktop/0001.webp" fetchpriority="high" alt="Sisi Padel Club — pemain padel di lapangan merah saat golden hour" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" />
+      <canvas id="hero-canvas" class="absolute inset-0 w-full h-full" data-frame="0"></canvas>
+      <!-- Bottom scrim for headline legibility over the bright scene -->
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-jungle/85 via-jungle/35 to-transparent"></div>
 
       <!-- Top Meta Bar -->
       <div class="relative z-20 max-w-7xl w-full mx-auto px-6 sm:px-10 pt-2 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-sand/85">
@@ -292,98 +294,37 @@
         </div>
       </div>
 
-      <!-- Center Stack: Giant Condensed Headline + Attached Female Padel Model -->
-      <div class="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-8 my-auto flex flex-col items-center justify-center pt-4 pb-6">
-        
-        <!-- GIANT CONDENSED HEADLINE: 'Stay. Play. Breathe.' -->
-        <h1 class="font-display-condensed font-bold text-center select-none w-full flex flex-col items-center justify-center">
-          <span class="block text-[20vw] sm:text-[17vw] lg:text-[14.2vw] tracking-tight text-sand leading-[0.84]">
-            STAY. PLAY.
-          </span>
-          <span class="block font-semibold italic text-[21vw] sm:text-[18vw] lg:text-[15vw] text-lime leading-[0.84] z-20 mix-blend-normal">
-            Breathe.
-          </span>
+      <!-- Headline + single CTA (bottom-left, over the scene) -->
+      <div class="relative z-20 max-w-7xl w-full mx-auto px-6 sm:px-10 mt-auto">
+        <p class="text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-2">
+          Sisi Padel Club &amp; Villa Bali
+        </p>
+        <h1 class="font-display-condensed font-bold leading-[0.84] tracking-tight select-none">
+          <span class="block text-[19vw] sm:text-[15vw] lg:text-[11vw] text-sand">STAY. PLAY.</span>
+          <span class="block italic text-[20vw] sm:text-[16vw] lg:text-[12vw] text-lime">Breathe.</span>
         </h1>
-
-        <!-- HERO MODEL LAYER (Attached Female Padel Player in Navy Dress & White Visor) -->
-        <div id="hero-model-stage" class="relative z-20 -mt-[18vw] sm:-mt-[15vw] lg:-mt-[12.5vw] w-[285px] sm:w-[360px] md:w-[410px] lg:w-[450px] flex flex-col items-center pointer-events-none">
-          
-          <!-- Player Cutout Wrapper (Scrubbed via GSAP: vertical parallax + slight rotation + scale) -->
-          <div id="hero-player-transform" class="w-full will-transform relative z-20">
-            <img
-              id="hero-player-img"
-              src="hero-player.png"
-              alt="Pemain Padel Sisi Padel Club & Villa Bali"
-              class="w-full h-auto object-contain select-none"
-              onerror="this.style.display='none'; document.getElementById('hero-model-fallback').classList.remove('hidden');"
-            />
-
-            <!-- Instant interactive loader if hero-player.png hasn't been saved in the folder yet -->
-            <div id="hero-model-fallback" class="hidden pointer-events-auto my-6 p-6 rounded-3xl bg-jungle/90 border-2 border-dashed border-lime text-center shadow-2xl">
-              <p class="font-display-condensed text-2xl text-lime mb-1">Muat Foto Model Hero (Lampiran #1)</p>
-              <p class="text-xs text-sand/80 leading-relaxed">
-                Gambar hero belum ditemukan — simpan gambar pemain padel wanita sebagai <code class="text-lime">hero-player.png</code> di folder yang sama dengan file ini.
-              </p>
-            </div>
-          </div>
-
-          <!-- Soft Dynamic Blurred Shadow under her (Shifts and scales opposite to motion — never flat black) -->
-          <div
-            id="hero-player-shadow"
-            class="model-ambient-shadow w-[76%] h-10 sm:h-14 rounded-full -mt-6 sm:-mt-8 z-10 pointer-events-none"
-          ></div>
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a href="https://playtomic.com/clubs/sisi-padel-club" target="_blank" rel="noopener noreferrer" class="bg-lime text-jungle font-semibold text-xs sm:text-sm uppercase tracking-[0.14em] px-6 py-3.5 rounded-full hover:opacity-95 transition-opacity">Book di Playtomic</a>
+          <a href="#booking" class="text-sand/90 text-xs sm:text-sm uppercase tracking-[0.14em] underline underline-offset-4 decoration-lime/70 hover:text-lime transition-colors">atau chat WhatsApp &rarr;</a>
+          <p class="text-sm sm:text-base text-sand/85 leading-snug max-w-md">2 roofed outdoor panoramic courts (Upper Court &amp; Main Court) dengan red turf, glass walls, dan villa di lokasi di Tampaksiring, Gianyar.</p>
         </div>
       </div>
+    </section>
 
-      <!-- Hero Bottom Bar: Club Descriptor, CTAs & Verified Stats Row -->
-      <div class="relative z-30 max-w-7xl w-full mx-auto px-6 sm:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pt-4 border-t border-sand/20">
-          
-          <!-- Left: Club Summary & Dual CTA -->
-          <div class="lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-            <div class="max-w-md">
-              <p class="text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-1">
-                Sisi Padel Club &amp; Villa Bali
-              </p>
-              <p class="text-sm sm:text-base text-sand/90 leading-snug">
-                2 roofed outdoor panoramic courts (Upper Court &amp; Main Court) dengan red turf, glass walls, dan villa di lokasi di Tampaksiring, Gianyar.
-              </p>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-3 shrink-0">
-              <a
-                href="https://playtomic.com/clubs/sisi-padel-club"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-lime text-jungle font-semibold text-xs sm:text-sm uppercase tracking-[0.14em] px-6 py-3.5 rounded-full hover:opacity-95 transition-opacity"
-              >
-                Book di Playtomic
-              </a>
-              <a
-                href="#booking"
-                class="bg-jungle/70 text-sand border border-sand/25 font-medium text-xs sm:text-sm uppercase tracking-[0.14em] px-5 py-3.5 rounded-full hover:border-lime hover:text-lime transition-colors"
-              >
-                WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <!-- Right: Verified Stats Row (2 courts, 08:00-21:30, 5 stars/26) -->
-          <div class="lg:col-span-5 grid grid-cols-3 gap-2 sm:gap-4 bg-jungle/45 backdrop-blur-sm border border-sand/15 rounded-2xl p-3.5 sm:p-4">
-            <div>
-              <div class="font-display-condensed text-2xl sm:text-3xl font-bold text-lime">2 COURTS</div>
-              <div class="text-[11px] uppercase tracking-wider text-sand/75 mt-0.5">Upper &amp; Main</div>
-            </div>
-            <div class="border-l border-sand/15 pl-3">
-              <div class="font-display-condensed text-2xl sm:text-3xl font-bold text-sand">08:00–21:30</div>
-              <div class="text-[11px] uppercase tracking-wider text-sand/75 mt-0.5">Buka Setiap Hari</div>
-            </div>
-            <div class="border-l border-sand/15 pl-3">
-              <div class="font-display-condensed text-2xl sm:text-3xl font-bold text-lime">5★ / 26</div>
-              <div class="text-[11px] uppercase tracking-wider text-sand/75 mt-0.5">Google Reviews</div>
-            </div>
-          </div>
-
+    <!-- CLUB STATS STRIP (moved out of the hero — hero stays clean) -->
+    <section id="club-strip" class="relative bg-sand text-jungle py-8 sm:py-10 px-6 sm:px-10 border-b border-jungle/10">
+      <div class="max-w-7xl mx-auto grid grid-cols-3 gap-4 sm:gap-8 text-center">
+        <div>
+          <div class="font-display-condensed text-3xl sm:text-4xl font-bold text-court-red">2 COURTS</div>
+          <div class="text-[11px] uppercase tracking-wider text-jungle/60 mt-0.5">Upper &amp; Main</div>
+        </div>
+        <div class="border-x border-jungle/15 px-2">
+          <div class="font-display-condensed text-3xl sm:text-4xl font-bold">08:00&ndash;21:30</div>
+          <div class="text-[11px] uppercase tracking-wider text-jungle/60 mt-0.5">Buka Setiap Hari</div>
+        </div>
+        <div>
+          <div class="font-display-condensed text-3xl sm:text-4xl font-bold text-court-red">5&starf; / 26</div>
+          <div class="text-[11px] uppercase tracking-wider text-jungle/60 mt-0.5">Google Reviews</div>
         </div>
       </div>
     </section>
@@ -1300,71 +1241,120 @@
       });
       gsap.ticker.lagSmoothing(0);
 
-      // 7. Preloader Counter 00 to 100 with Glowing Lime Ball, then fade
+      // 7. Preloader: shows REAL load progress (hero frames decoded), then fades.
+      // No fake counter — the % is frames decoded / total frames.
       const countEl = document.getElementById('preloader-count');
       const preloaderBall = document.getElementById('preloader-ball');
-      const preloaderObj = { val: 0 };
-
-      const preloaderTl = gsap.timeline({
-        onComplete: () => {
-          if (preloader) preloader.style.display = 'none';
-          ScrollTrigger.refresh();
-        },
-      });
-
-      preloaderTl
-        .to(preloaderBall, {
-          rotation: 360,
-          scale: 1.12,
-          duration: 1.25,
-          ease: 'power2.inOut',
-        }, 0)
-        .to(preloaderObj, {
-          val: 100,
-          duration: 1.25,
-          ease: 'power2.inOut',
-          onUpdate: () => {
-            if (countEl) {
-              countEl.textContent = String(Math.round(preloaderObj.val)).padStart(2, '0');
-            }
-          },
-        }, 0)
-        .to(preloader, {
+      let preloaderHidden = false;
+      function hidePreloader() {
+        if (preloaderHidden || !preloader) return;
+        preloaderHidden = true;
+        gsap.to(preloader, {
           opacity: 0,
           duration: 0.55,
           ease: 'power2.out',
+          onComplete: () => {
+            preloader.style.display = 'none';
+            ScrollTrigger.refresh();
+          },
         });
+      }
+      if (preloaderBall) {
+        gsap.to(preloaderBall, { rotation: 360, scale: 1.12, duration: 1.25, ease: 'power2.inOut', repeat: -1, yoyo: true });
+      }
+      // Safety: never block the page longer than 3s even if frames stall.
+      setTimeout(hidePreloader, 3000);
 
-      // 8. HERO MODEL SCROLL ANIMATION (GSAP ScrollTrigger Scrub)
-      // Parallax vertical + slight rotation + scale as user scrolls,
-      // plus soft dynamic blurred shadow under her that shifts & scales opposite to motion.
-      gsap.to('#hero-player-transform', {
-        yPercent: -14,
-        rotation: -4.5,
-        scale: 1.07,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.65,
+      // 8. HERO FRAME SEQUENCE (Vibora pattern: canvas + pre-rendered frames, scroll scrub)
+      const heroCanvas = document.getElementById('hero-canvas');
+      const heroFirstImg = document.getElementById('hero-first-frame');
+      const heroIsMobile = window.matchMedia('(max-width: 768px)').matches;
+      const heroSet = heroIsMobile ? { base: 'hero/mobile/', count: 48 } : { base: 'hero/desktop/', count: 64 };
+      const heroImgs = new Array(heroSet.count).fill(null);
+      let heroDecoded = 0;
+      let heroShown = -1;
+
+      function heroURL(i) { return heroSet.base + String(i + 1).padStart(4, '0') + '.webp'; }
+      // First-frame <img> must match the active set (desktop by default in markup).
+      if (heroFirstImg) heroFirstImg.src = heroURL(0);
+
+      function heroProgress() {
+        if (countEl) countEl.textContent = String(Math.round((heroDecoded / heroSet.count) * 100)).padStart(2, '0');
+        if (heroDecoded >= 8) hidePreloader();
+      }
+
+      function heroSizeCanvas() {
+        if (!heroCanvas) return;
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        const w = heroCanvas.clientWidth, h = heroCanvas.clientHeight;
+        if (!w || !h) return;
+        heroCanvas.width = Math.round(w * dpr);
+        heroCanvas.height = Math.round(h * dpr);
+      }
+
+      function heroDraw(i) {
+        if (!heroCanvas) return;
+        // Nearest loaded frame at or below i (Vibora fallback); never go backwards.
+        let j = i;
+        while (j > 0 && !heroImgs[j]) j--;
+        const img = heroImgs[j];
+        if (!img) return;
+        heroSizeCanvas();
+        const ctx = heroCanvas.getContext('2d');
+        const cw = heroCanvas.width, ch = heroCanvas.height;
+        const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+        const dw = img.naturalWidth * scale, dh = img.naturalHeight * scale;
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+        heroCanvas.dataset.frame = String(i);
+        heroShown = i;
+        if (heroFirstImg && j === 0) heroFirstImg.style.opacity = '0';
+      }
+
+      function heroLoadOne(i) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => {
+            img.decode().then(() => {
+              heroImgs[i] = img; heroDecoded++; heroProgress();
+              if (i === 0) heroDraw(0);
+              resolve();
+            }).catch(() => {
+              heroImgs[i] = img; heroDecoded++; heroProgress(); resolve();
+            });
+          };
+          img.onerror = () => resolve();
+          img.src = heroURL(i);
+        });
+      }
+
+      async function heroLoadAll() {
+        // Frame 0 first (LCP), then batches of 8 with 6 concurrent loaders.
+        await heroLoadOne(0);
+        for (let st = 1; st < heroSet.count; st += 8) {
+          const batch = [];
+          for (let i = st; i < Math.min(st + 8, heroSet.count); i++) batch.push(i);
+          for (let k = 0; k < batch.length; k += 6) {
+            await Promise.all(batch.slice(k, k + 6).map(heroLoadOne));
+          }
+        }
+      }
+      heroLoadAll();
+
+      // Scroll scrub: pin hero, scroll picks the frame (end +=400%, scrub 0.5).
+      ScrollTrigger.create({
+        trigger: '#hero',
+        start: 'top top',
+        end: '+=400%',
+        pin: true,
+        scrub: 0.5,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const idx = Math.round(self.progress * (heroSet.count - 1));
+          if (idx !== heroShown) heroDraw(idx);
         },
       });
-
-      gsap.to('#hero-player-shadow', {
-        xPercent: 12,
-        yPercent: 26,
-        scaleX: 0.72,
-        scaleY: 0.65,
-        opacity: 0.32,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.65,
-        },
-      });
+      window.addEventListener('resize', () => { if (heroShown >= 0) heroDraw(heroShown); });
 
       // 9. FLOATING PADEL BALL ANIMATION (Travels down the page, shrinking and rotating)
       const ballWrapper = document.getElementById('scroll-ball-wrapper');
